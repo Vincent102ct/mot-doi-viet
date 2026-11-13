@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://7rl1veh7olp2"]
+
+[ext_resource type="Script" uid="uid://fuxt822xoxa1" path="res://scripts/prototypes/p1a_world.gd" id="1_world"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+
+[sub_resource type="RectangleShape2D" id="Rect_Cabin"]
+size = Vector2(224, 144)
+
+[sub_resource type="RectangleShape2D" id="Rect_LongWall"]
+size = Vector2(440, 24)
+
+[sub_resource type="RectangleShape2D" id="Rect_CornerHorizontal"]
+size = Vector2(260, 24)
+
+[sub_resource type="RectangleShape2D" id="Rect_CornerVertical"]
+size = Vector2(24, 174)
+
+[sub_resource type="RectangleShape2D" id="Rect_CrateA"]
+size = Vector2(54, 54)
+
+[sub_resource type="RectangleShape2D" id="Rect_CrateB"]
+size = Vector2(66, 52)
+
+[sub_resource type="RectangleShape2D" id="Rect_Stone"]
+size = Vector2(44, 36)
+
+[sub_resource type="RectangleShape2D" id="Rect_BoundaryLeft"]
+size = Vector2(16, 768)
+
+[sub_resource type="RectangleShape2D" id="Rect_BoundaryRight"]
+size = Vector2(16, 768)
+
+[sub_resource type="RectangleShape2D" id="Rect_BoundaryTop"]
+size = Vector2(1280, 16)
+
+[sub_resource type="RectangleShape2D" id="Rect_BoundaryBottom"]
+size = Vector2(1280, 16)
+
+[node name="P1AWorld" type="Node2D" unique_id=1442524798]
+script = ExtResource("1_world")
+
+[node name="Cabin" type="StaticBody2D" parent="." unique_id=585375813]
+position = Vector2(360, 208)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabin" unique_id=140024422]
+shape = SubResource("Rect_Cabin")
+
+[node name="Visual" type="Polygon2D" parent="Cabin" unique_id=223189151]
+color = Color(0.6941176, 0.4156863, 0.2862745, 1)
+polygon = PackedVector2Array(-112, -72, 112, -72, 112, 72, -112, 72)
+
+[node name="Roof" type="Polygon2D" parent="Cabin" unique_id=1938725879]
+color = Color(0.8745098, 0.5882353, 0.4039216, 1)
+polygon = PackedVector2Array(-120, -68, 120, -68, 104, -92, -104, -92)
+
+[node name="Door" type="Polygon2D" parent="Cabin" unique_id=1578213153]
+color = Color(0.3490196, 0.2431373, 0.2980392, 1)
+polygon = PackedVector2Array(-18, 27, 18, 27, 18, 72, -18, 72)
+
+[node name="LongWall" type="StaticBody2D" parent="." unique_id=1506460821]
+position = Vector2(300, 464)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LongWall" unique_id=947680011]
+shape = SubResource("Rect_LongWall")
+
+[node name="Visual" type="Polygon2D" parent="LongWall" unique_id=1023835452]
+color = Color(0.627451, 0.4862745, 0.3843137, 1)
+polygon = PackedVector2Array(-220, -12, 220, -12, 220, 12, -220, 12)
+
+[node name="Highlight" type="Polygon2D" parent="LongWall" unique_id=78231427]
+color = Color(0.8313725, 0.6823529, 0.5333333, 1)
+polygon = PackedVector2Array(-216, -9, 216, -9, 216, -4, -216, -4)
+
+[node name="CornerHorizontal" type="StaticBody2D" parent="." unique_id=1139515444]
+position = Vector2(947, 541)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CornerHorizontal" unique_id=407312214]
+shape = SubResource("Rect_CornerHorizontal")
+
+[node name="Visual" type="Polygon2D" parent="CornerHorizontal" unique_id=163001545]
+color = Color(0.627451, 0.4862745, 0.3843137, 1)
+polygon = PackedVector2Array(-130, -12, 130, -12, 130, 12, -130, 12)
+
+[node name="CornerVertical" type="StaticBody2D" parent="." unique_id=2093687155]
+position = Vector2(828, 634)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CornerVertical" unique_id=170525512]
+shape = SubResource("Rect_CornerVertical")
+
+[node name="Visual" type="Polygon2D" parent="CornerVertical" unique_id=227470031]
+color = Color(0.627451, 0.4862745, 0.3843137, 1)
+polygon = PackedVector2Array(-12, -87, 12, -87, 12, 87, -12, 87)
+
+[node name="CrateA" type="StaticBody2D" parent="." unique_id=1887086127]
+position = Vector2(745, 146)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrateA" unique_id=1201491595]
+shape = SubResource("Rect_CrateA")
+
+[node name="Visual" type="Polygon2D" parent="CrateA" unique_id=459187553]
+color = Color(0.7411765, 0.545098, 0.345098, 1)
+polygon = PackedVector2Array(-27, -27, 27, -27, 27, 27, -27, 27)
+
+[node name="CrateB" type="StaticBody2D" parent="." unique_id=1470219178]
+position = Vector2(774, 264)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrateB" unique_id=1669294220]
+shape = SubResource("Rect_CrateB")
+
+[node name="Visual" type="Polygon2D" parent="CrateB" unique_id=984196451]
+color = Color(0.7411765, 0.545098, 0.345098, 1)
+polygon = PackedVector2Array(-33, -26, 33, -26, 33, 26, -33, 26)
+
+[node name="Stone" type="StaticBody2D" parent="." unique_id=314769187]
+position = Vector2(1080, 234)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone" unique_id=524012979]
+shape = SubResource("Rect_Stone")
+
+[node name="Visual" type="Polygon2D" parent="Stone" unique_id=2073895934]
+color = Color(0.5529412, 0.5960784, 0.6392157, 1)
+polygon = PackedVector2Array(-22, -18, 22, -18, 22, 18, -22, 18)
+
+[node name="BoundaryLeft" type="StaticBody2D" parent="." unique_id=1335723561]
+position = Vector2(-8, 384)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryLeft" unique_id=507714683]
+shape = SubResource("Rect_BoundaryLeft")
+
+[node name="Visual" type="Polygon2D" parent="BoundaryLeft" unique_id=1461621759]
+color = Color(0.4156863, 0.654902, 0.4078431, 1)
+polygon = PackedVector2Array(-8, -384, 8, -384, 8, 384, -8, 384)
+
+[node name="BoundaryRight" type="StaticBody2D" parent="." unique_id=259916081]
+position = Vector2(1288, 384)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryRight" unique_id=972722274]
+shape = SubResource("Rect_BoundaryRight")
+
+[node name="Visual" type="Polygon2D" parent="BoundaryRight" unique_id=2033758468]
+color = Color(0.4156863, 0.654902, 0.4078431, 1)
+polygon = PackedVector2Array(-8, -384, 8, -384, 8, 384, -8, 384)
+
+[node name="BoundaryTop" type="StaticBody2D" parent="." unique_id=1356151278]
+position = Vector2(640, -8)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryTop" unique_id=1491971254]
+shape = SubResource("Rect_BoundaryTop")
+
+[node name="Visual" type="Polygon2D" parent="BoundaryTop" unique_id=525954136]
+color = Color(0.4156863, 0.654902, 0.4078431, 1)
+polygon = PackedVector2Array(-640, -8, 640, -8, 640, 8, -640, 8)
+
+[node name="BoundaryBottom" type="StaticBody2D" parent="." unique_id=636410452]
+position = Vector2(640, 776)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoundaryBottom" unique_id=252748205]
+shape = SubResource("Rect_BoundaryBottom")
+
+[node name="Visual" type="Polygon2D" parent="BoundaryBottom" unique_id=215076484]
+color = Color(0.4156863, 0.654902, 0.4078431, 1)
+polygon = PackedVector2Array(-640, -8, 640, -8, 640, 8, -640, 8)
+
+[node name="Player" parent="." unique_id=405949697 instance=ExtResource("2_player")]
+position = Vector2(125, 230)
+
+[node name="HelpLayer" type="CanvasLayer" parent="." unique_id=670273646]
+layer = 2
+
+[node name="HelpPanel" type="PanelContainer" parent="HelpLayer" unique_id=1411086171]
+offset_left = 12.0
+offset_top = 10.0
+offset_right = 500.0
+offset_bottom = 52.0
+
+[node name="Help" type="Label" parent="HelpLayer/HelpPanel" unique_id=2109620096]
+layout_mode = 2
+text = "P1-A • WASD / phím mũi tên • F8 dừng • F5 vẫn là smoke-test"
